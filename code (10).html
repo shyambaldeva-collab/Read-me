@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReadFlow AI Assistant &amp; Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Literata:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f4;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e4e2dd;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f4dfcb",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#241a0d",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-bright": "#fbf9f4",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#e8e2d6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#4a473e",
+                        "surface": "#fbf9f4",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "on-secondary-fixed": "#1e1c14",
+                        "on-background": "#1b1c19",
+                        "on-tertiary-fixed": "#241a0d",
+                        "surface-container-high": "#eae8e3",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#30312e",
+                        "primary-container": "#1c1b1b",
+                        "background": "#fbf9f4",
+                        "outline": "#747878",
+                        "surface-container": "#f0eee9",
+                        "on-surface-variant": "#444748",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#cbc6ba",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "on-surface": "#1b1c19",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#68645b",
+                        "primary": "#000000",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dbdad5",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary": "#625e55",
+                        "on-primary-container": "#858383",
+                        "secondary-container": "#e8e2d6",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-container": "#928170",
+                        "on-primary-fixed-variant": "#474746"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1140px",
+                        "stack-xl": "80px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "stack-xs": "4px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-md": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Literata"],
+                        "headline-md": ["Literata"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Literata"],
+                        "headline-lg": ["Literata"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Literata"],
+                        "body-md": ["Literata"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                        "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-background flex items-center justify-between px-margin-mobile h-16 transition-all duration-250 ease-in-out">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional close-up headshot of a person with a friendly expression, set against a soft, blurred library background. The lighting is warm and natural, emphasizing a high-quality light-mode aesthetic. The composition is clean and modern, following the refined and intellectual brand personality of the digital sanctuary theme. The image uses soft neutral tones and high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWKeipXYHu1vgufU08FhkIyhp8x9sinz0o7EWCoVUnGiGuBeEuoQgIQx6n0jE86sYIoDRPAYRN78W2nqanvVbTnSlq5omSe-8oirfb98WEgtMZi-mZZ8TD64naBRhV-IfIuZlthuVChaPhhGBkZLMz5HGxIj9g0YPBZ8L_ks1-UDaX6RjYe8Qv6luiDjFP61vAEmSaGPM1vAjNBDIT98wd8Pcf7zZmKy1hdFjUkOnwf1VwNYiqsZPmvl2xYDEOXtGo_bdBjQKTfQ"/>
+</div>
+<span class="font-headline-md text-headline-md font-semibold text-primary">ReadFlow</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity" data-icon="search">search</button>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-[720px] mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Reading Assistant</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Chapter 4: The Architecture of Thought</p>
+</header>
+<!-- Segmented Control -->
+<div class="bg-surface-container-low p-1 rounded-xl flex mb-stack-md transition-all">
+<button class="flex-1 py-2 font-label-lg text-label-lg rounded-lg text-on-surface-variant hover:bg-surface-variant transition-colors">Summary</button>
+<button class="flex-1 py-2 font-label-lg text-label-lg rounded-lg bg-surface-container-highest text-primary shadow-sm font-bold">Q&amp;A</button>
+<button class="flex-1 py-2 font-label-lg text-label-lg rounded-lg text-on-surface-variant hover:bg-surface-variant transition-colors">Highlights</button>
+</div>
+<!-- Chat View Area (Focused Task) -->
+<section class="flex flex-col gap-stack-md mb-stack-xl">
+<!-- Assistant Message -->
+<div class="flex gap-4 items-start max-w-[90%]">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="bg-surface-container p-4 rounded-2xl rounded-tl-none">
+<p class="font-body-md text-body-md text-on-surface">Hello! I've analyzed this chapter. Would you like a summary or do you have specific questions about the structural metaphors used?</p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-4 items-start justify-end">
+<div class="bg-secondary-container p-4 rounded-2xl rounded-tr-none max-w-[85%]">
+<p class="font-body-md text-body-md text-on-secondary-container">Explain the main concept of this chapter like I'm five.</p>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-outline-variant">
+<img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7QKQ9pbfgjTjEdU3P-yLJiFtryg-0Ta1IGwYhAhwl8LmSjNIPZQNtzSHHZU1YHYWufOEsTvzkurKgISqHmewdhrXhZNpTy2qy0Lg-Y9IfZpvfhHlycCqbYT8vwTpxq56VnpMJ8CqhprIBLj23N-49_gcSkap993aps2KAzyihj2Vw1P5Ghpm4NQ4C2_U-opcjWUe8Vk32I27OwmgDh0PbreTMHE1ndukgb8ycQnJWzfkYw361fnpIZjvgNKVbYqRa5hyGbRw0dw"/>
+</div>
+</div>
+<!-- Assistant Response (Analogy) -->
+<div class="flex gap-4 items-start max-w-[90%]">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="bg-surface-container p-4 rounded-2xl rounded-tl-none">
+<p class="font-body-md text-body-md text-on-surface mb-stack-sm">Think of it like building a Lego house. Before you put the colorful bricks on, you need a strong base plate. The "architecture" is that base plate—it's the plan that holds everything else in place so your house doesn't fall over!</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-label-sm font-label-sm text-on-surface-variant">Lego Analogy</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-label-sm font-label-sm text-on-surface-variant">Structure</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Chat Input Field -->
+<div class="relative mb-stack-xl">
+<input class="w-full bg-surface-container-low border-none border-b-2 border-outline-variant focus:border-primary focus:ring-0 py-4 px-4 font-body-md transition-all rounded-t-lg" placeholder="Ask anything about this chapter..." type="text"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<!-- Insights Section: Saved Quotes -->
+<section class="border-t border-outline-variant pt-stack-lg">
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary">Saved Quotes</h2>
+<button class="text-label-lg font-label-lg text-secondary hover:underline transition-all">View All</button>
+</div>
+<!-- Asymmetric Bento Grid for Quotes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Large Quote Card -->
+<div class="md:col-span-2 bg-white border border-outline-variant p-8 rounded-xl relative overflow-hidden group hover:shadow-lg transition-shadow duration-250">
+<span class="material-symbols-outlined absolute -top-4 -left-2 text-[120px] opacity-5 text-primary pointer-events-none">format_quote</span>
+<blockquote class="font-body-lg text-body-lg italic text-primary leading-relaxed relative z-10 mb-6">
+                        "The clarity of one's internal framework determines the resilience of their external reality. We build our worlds from the inside out."
+                    </blockquote>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Page 142 • Chapter 4</span>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-on-surface-variant">share</button>
+<button class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">bookmark</button>
+</div>
+</div>
+</div>
+<!-- Small Quote Card 1 -->
+<div class="bg-tertiary-fixed p-6 rounded-xl border border-transparent hover:border-outline-variant transition-all">
+<p class="font-body-md text-body-md text-tertiary-container mb-4">"Complexity is often a mask for a lack of foundational understanding."</p>
+<span class="font-label-sm text-label-sm text-on-tertiary-container">Page 156</span>
+</div>
+<!-- Small Quote Card 2 -->
+<div class="bg-surface-container-highest p-6 rounded-xl border border-transparent hover:border-outline-variant transition-all">
+<p class="font-body-md text-body-md text-primary mb-4">"Silence in writing is as communicative as the words themselves."</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Page 168</span>
+</div>
+</div>
+</section>
+<!-- Chapter Visualization (Editorial Pattern) -->
+<section class="mt-stack-xl mb-stack-xl">
+<div class="bg-primary p-12 rounded-2xl text-white flex flex-col md:flex-row items-center gap-10 overflow-hidden relative">
+<div class="flex-1 z-10">
+<h3 class="font-headline-lg text-headline-lg mb-4">Deep Dive: Systems Thinking</h3>
+<p class="font-body-md text-body-md opacity-80 mb-8 max-w-md">Understand the interconnected nature of the concepts presented in this chapter through our interactive map.</p>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-label-lg text-label-lg hover:opacity-90 transition-all">Explore Insights</button>
+</div>
+<div class="w-full md:w-1/2 h-64 relative z-10 rounded-xl overflow-hidden shadow-2xl">
+<img alt="Abstract visualization" class="w-full h-full object-cover" data-alt="A sophisticated abstract digital art piece representing complex neural networks and systems thinking. Delicate gold and copper lines weave together on a dark charcoal background, creating a map of interconnected ideas. The lighting is dramatic, with subtle glows at the nodes of connection. The aesthetic is professional, intellectual, and high-end, mirroring a premium editorial layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAim3hVfirX7Ii7LxE1gdsAcK84ZPZwGdz9uny56an8Y7lkvplRZBlvdZFlEO6OX8hVGHXUBNGvXMaFNVD1BqIab4TMwtdnhLJhaGJSiryMMxmL_8bwUGW_ZrfoKEN488PfrMiKXdkNrOWrT0pOaziJOBNZ31FVgYoOoK7D6ATQLduCoP1xbnMwgyqjOdRMZS0nErRDjepKUm5sXsaIa4xWrFeaORbSVBHJ4HqCTbfxudlBEKC1F-Sd4XA_HOxxKucVL62v2gHQ8Q"/>
+</div>
+<!-- Background Texture/Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface-container border-t border-outline-variant flex justify-around items-center h-16 px-4">
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-200 hover:bg-surface-variant cursor-pointer w-full h-full">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-label-md text-label-md">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-200 hover:bg-surface-variant cursor-pointer w-full h-full">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">Discovery</span>
+</div>
+<!-- Active Tab: Analytics (closest semantic match for Insights) -->
+<div class="flex flex-col items-center justify-center text-primary font-semibold scale-95 transition-transform duration-200 w-full h-full">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</div>
+</footer>
+<!-- Progress Bar (Design System Unique Component) -->
+<div class="fixed bottom-16 left-0 w-full h-[2px] bg-outline-variant z-40">
+<div class="h-full bg-tertiary-fixed-dim" style="width: 65%;"></div>
+</div>
+</body></html>

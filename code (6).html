@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#f4dfcb",
+                    "inverse-primary": "#c8c6c5",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#241a0d",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#e5e2e1",
+                    "inverse-on-surface": "#f2f1ec",
+                    "surface-bright": "#fbf9f4",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#e8e2d6",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#4a473e",
+                    "surface": "#fbf9f4",
+                    "surface-container-highest": "#e4e2dd",
+                    "tertiary-fixed-dim": "#d7c3b0",
+                    "on-secondary-fixed": "#1e1c14",
+                    "on-background": "#1b1c19",
+                    "on-tertiary-fixed": "#241a0d",
+                    "surface-container-high": "#eae8e3",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#30312e",
+                    "primary-container": "#1c1b1b",
+                    "background": "#fbf9f4",
+                    "outline": "#747878",
+                    "surface-container": "#f0eee9",
+                    "on-surface-variant": "#444748",
+                    "surface-container-low": "#f5f3ee",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#000000",
+                    "secondary-fixed-dim": "#cbc6ba",
+                    "on-tertiary-fixed-variant": "#524436",
+                    "on-surface": "#1b1c19",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c4c7c7",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary-container": "#68645b",
+                    "primary": "#000000",
+                    "surface-tint": "#5f5e5e",
+                    "surface-dim": "#dbdad5",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary": "#625e55",
+                    "on-primary-container": "#858383",
+                    "secondary-container": "#e8e2d6",
+                    "surface-variant": "#e4e2dd",
+                    "on-tertiary-container": "#928170",
+                    "on-primary-fixed-variant": "#474746"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "container-max": "1140px",
+                    "stack-xl": "80px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px",
+                    "stack-xs": "4px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "stack-md": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Literata"],
+                    "headline-md": ["Literata"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Literata"],
+                    "headline-lg": ["Literata"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Literata"],
+                    "body-md": ["Literata"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f4; /* Warm Paper */
+            -webkit-font-smoothing: antialiased;
+        }
+        .reading-container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        ::selection {
+            background-color: rgba(244, 223, 203, 0.6);
+            color: inherit;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-tertiary-fixed">
+<!-- Top Navigation (Shell Implementation) -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md flex items-center justify-between px-margin-mobile h-14 md:px-margin-desktop transition-colors duration-250">
+<button aria-label="Back" class="flex items-center justify-center p-2 hover:bg-surface-container-low transition-colors duration-250 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Reading Now</span>
+<h1 class="font-body-md text-body-md font-semibold text-primary truncate max-w-[200px] md:max-w-none">The Architecture of Happiness</h1>
+</div>
+<button aria-label="Text Settings" class="flex items-center justify-center p-2 hover:bg-surface-container-low transition-colors duration-250 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="text_fields">text_fields</span>
+</button>
+</header>
+<!-- Reading Canvas -->
+<main class="pt-24 pb-32 px-margin-mobile md:px-0">
+<article class="reading-container">
+<div class="mb-stack-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-stack-sm">Chapter II</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-md leading-tight">The Ideal of Home</h2>
+</div>
+<div class="space-y-stack-md font-body-lg text-body-lg text-on-surface leading-relaxed">
+<p>
+                    One of the most powerful feelings a home can provide is the sense of belonging. Not just to a physical space, but to a set of ideas and values that the walls themselves seem to whisper. In <span class="bg-tertiary-fixed px-1 rounded-sm cursor-pointer border-b border-primary/20">The Architecture of Happiness</span>, we explore why certain spaces make us feel anchored while others leave us adrift.
+                </p>
+<!-- Mocked Selection Menu -->
+<div class="relative py-4">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 flex items-center bg-primary text-background px-4 py-2 rounded-full shadow-xl z-10 border border-outline/10">
+<button class="flex items-center gap-2 px-3 border-r border-background/20 font-label-md text-label-md hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined !text-[18px]" data-icon="border_color">border_color</span>
+                            Highlight
+                        </button>
+<button class="flex items-center gap-2 px-3 border-r border-background/20 font-label-md text-label-md hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined !text-[18px]" data-icon="sticky_note_2">sticky_note_2</span>
+                            Note
+                        </button>
+<button class="flex items-center gap-2 pl-3 font-label-md text-label-md hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined !text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+                            Explain
+                        </button>
+</div>
+<p>
+                        We depend on our surroundings to remind us of who we are. Our memory is like a sieve; we are prone to forgetting our own resolutions and identities unless they are bolstered by our external environment. It is perhaps for this reason that we invest so much in the decoration of our rooms, as if the placement of a vase or the choice of a curtain could help us sustain a preferred version of ourselves.
+                    </p>
+</div>
+<p>
+                    Beauty in architecture is more than just an aesthetic preference; it is a psychological requirement. When we describe a building as beautiful, we are effectively saying that we like the way of life it suggests to us. It has an attitude we would like to emulate. It speaks of a grace and a poise that we ourselves lack.
+                </p>
+<div class="mt-stack-xl flex justify-center py-stack-lg">
+<div class="w-16 h-px bg-outline-variant"></div>
+</div>
+<p>
+                    Consider the classic proportions of a Georgian townhouse. It does not shout; it converses. It understands the value of restraint and the importance of privacy. In its rhythmic windows and symmetrical facade, we find a visual representation of order—a quality that we often find elusive in the chaotic sprawl of our internal lives.
+                </p>
+</div>
+</article>
+</main>
+<!-- Progress & Tool Overlay (Appears on Tap/Scroll Interaction) -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-surface-container/95 backdrop-blur-sm transition-all duration-300 transform translate-y-0 border-t border-outline-variant/30">
+<!-- Progress Bar Indicator -->
+<div class="w-full h-[2px] bg-outline-variant/20">
+<div class="h-full bg-secondary w-[65%] transition-all duration-500"></div>
+</div>
+<div class="reading-container px-margin-mobile py-4 flex flex-col gap-4">
+<!-- Micro-Reading Controls -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Micro-Reading</span>
+<div class="flex items-center gap-2 mt-1">
+<button class="px-3 py-1 bg-surface-container-highest rounded-full font-label-md text-label-md text-primary border border-outline-variant/50">2m</button>
+<button class="px-3 py-1 bg-primary text-background rounded-full font-label-md text-label-md">5m</button>
+<button class="px-3 py-1 bg-surface-container-highest rounded-full font-label-md text-label-md text-primary border border-outline-variant/50">10m</button>
+</div>
+</div>
+<!-- AI Assistant Shortcut -->
+<button aria-label="Ask AI Assistant" class="w-12 h-12 flex items-center justify-center bg-tertiary text-on-tertiary rounded-full shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</button>
+</div>
+<!-- Metadata & Page count -->
+<div class="flex justify-between items-center text-on-surface-variant border-t border-outline-variant/20 pt-2">
+<span class="font-label-md text-label-md">Page 142 of 218</span>
+<span class="font-label-md text-label-md">65% Complete</span>
+</div>
+</div>
+</div>
+<!-- Background Detail Decoration (Subtle texture feel) -->
+<div class="fixed inset-0 pointer-events-none opacity-20 mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/felt.png')]"></div>
+</body></html>
