@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReadFlow — Elevate Your Reading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#f4dfcb",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#241a0d",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#f2f1ec",
+                        "surface-bright": "#fbf9f4",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#e8e2d6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#4a473e",
+                        "surface": "#fbf9f4",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "on-secondary-fixed": "#1e1c14",
+                        "on-background": "#1b1c19",
+                        "on-tertiary-fixed": "#241a0d",
+                        "surface-container-high": "#eae8e3",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#30312e",
+                        "primary-container": "#1c1b1b",
+                        "background": "#fbf9f4",
+                        "outline": "#747878",
+                        "surface-container": "#f0eee9",
+                        "on-surface-variant": "#444748",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#cbc6ba",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "on-surface": "#1b1c19",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#68645b",
+                        "primary": "#000000",
+                        "surface-tint": "#5f5e5e",
+                        "surface-dim": "#dbdad5",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary": "#625e55",
+                        "on-primary-container": "#858383",
+                        "secondary-container": "#e8e2d6",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary-container": "#928170",
+                        "on-primary-fixed-variant": "#474746"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1140px",
+                        "stack-xl": "80px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "stack-xs": "4px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-md": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Literata"],
+                        "headline-md": ["Literata"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Literata"],
+                        "headline-lg": ["Literata"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Literata"],
+                        "body-md": ["Literata"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "400" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #fbf9f4;
+    color: #1b1c19;
+    -webkit-font-smoothing: antialiased
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.editorial-shadow {
+    box-shadow: 0 8px 24px rgba(27, 28, 25, 0.04)
+    }
+.paper-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBlDKQ4Sx-0dTDS152OC4cQNrwjs-ECni-KW1FQE_OoF3cZ8hF8rWcF7eOrsJCHCTzZe-rTh1Cmkolk7qSZPIiH8Ez8PgQNNfNzGYE96vOhVcFHOE4x2hz);
+    opacity: 0.03
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background flex items-center justify-between px-margin-mobile h-16 transition-all duration-250 ease-in-out">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md font-semibold text-primary">ReadFlow</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-secondary-container overflow-hidden border border-outline-variant">
+<img alt="User profile photo" src="https://via.placeholder.com/32"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-margin-mobile flex flex-col items-center text-center space-y-stack-md">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight leading-tight">
+                    Upload PDF → Start Reading <span class="italic font-normal">Beautifully</span>
+</h1>
+<p class="mt-stack-md font-body-lg text-body-lg text-secondary max-w-lg mx-auto">
+                    Experience a digital sanctuary designed for deep immersion. ReadFlow transforms dense documents into breathable, editorial-quality experiences.
+                </p>
+<div class="mt-stack-lg flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-background font-label-lg text-label-lg rounded-full hover:opacity-90 transition-all editorial-shadow">
+                        Start Your Library
+                    </button>
+<button class="w-full sm:w-auto px-8 py-4 border border-outline-variant text-primary font-label-lg text-label-lg rounded-full hover:bg-surface-container-low transition-all">
+                        Explore Demo
+                    </button>
+</div>
+</div>
+<!-- Preview UI Canvas -->
+<div class="mt-stack-xl relative w-full max-w-4xl mx-auto">
+<div class="relative rounded-xl overflow-hidden editorial-shadow border border-outline-variant bg-white aspect-[4/3] md:aspect-[16/9]">
+<div class="absolute inset-0 paper-grain pointer-events-none"></div>
+<!-- Floating UI Overlay Element -->
+<div class="absolute bottom-8 left-8 right-8 bg-surface-container/95 backdrop-blur-md p-6 rounded-lg border border-outline-variant hidden md:block">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<div class="text-left">
+<p class="font-label-lg text-label-lg text-primary">The Art of Focus</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Chapter 4: Digital Sanctuaries</p>
+</div>
+</div>
+<div class="w-1/3 bg-outline-variant h-[2px] rounded-full overflow-hidden">
+<div class="bg-tertiary w-3/4 h-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Propositions (Bento Grid Inspired) -->
+<section class="mt-stack-xl px-margin-mobile max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Prop 1: Clean Reading View -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant flex flex-col justify-between aspect-square md:aspect-auto md:h-80">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Clean Reading View</h3>
+<p class="mt-stack-sm text-on-surface-variant font-body-md text-body-md">Distraction-free typography tuned for long-form immersion and visual comfort.</p>
+</div>
+<div class="mt-6 flex gap-2">
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm rounded-full">Serif</span>
+<span class="px-3 py-1 bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm rounded-full">Adjustable</span>
+</div>
+</div>
+<!-- Prop 2: AI Summaries -->
+<div class="bg-primary text-background p-8 rounded-xl flex flex-col justify-between aspect-square md:aspect-auto md:h-80 relative overflow-hidden">
+<div class="z-10">
+<div class="w-12 h-12 rounded-full bg-on-primary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md">AI Summaries</h3>
+<p class="mt-stack-sm text-on-primary-container font-body-md text-body-md">Get the essence of any document in seconds with intelligent, context-aware synthesis.</p>
+</div>
+<div class="mt-6 z-10">
+<button class="font-label-lg text-label-lg flex items-center gap-2 group">
+                            Learn how <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Abstract Background Pattern -->
+<div class="absolute -bottom-12 -right-12 w-48 h-48 bg-surface-container-highest/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Prop 3: Micro-Reading Mode -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant flex flex-col justify-between aspect-square md:aspect-auto md:h-80">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Micro-Reading</h3>
+<p class="mt-stack-sm text-on-surface-variant font-body-md text-body-md">Master your reading list in small chunks during those brief moments between tasks.</p>
+</div>
+<div class="mt-6">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed border-2 border-surface"></div>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed-dim border-2 border-surface"></div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed border-2 border-surface"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Minimalist Testimonial / Social Proof -->
+<section class="mt-stack-xl px-margin-mobile py-stack-lg border-y border-outline-variant">
+<div class="max-w-2xl mx-auto text-center italic font-body-lg text-body-lg text-primary">
+                "ReadFlow has fundamentally changed how I interact with academic papers. It's not just a reader; it's a cognitive enhancer that respects my attention."
+                <div class="mt-stack-md not-italic font-label-lg text-label-lg text-secondary">
+                    — Elena Vance, Research Director
+                </div>
+</div>
+</section>
+</main>
+<!-- Bottom Progress Indicator (Custom Brand Component) -->
+<div class="fixed bottom-16 left-0 w-full h-[2px] bg-outline-variant z-40">
+<div class="h-full bg-tertiary w-1/4"></div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container flex justify-around items-center h-16 px-4 border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-label-md text-label-md">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-semibold hover:bg-surface-variant transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">Discovery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-transform duration-200 scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</nav>
+</body></html>
